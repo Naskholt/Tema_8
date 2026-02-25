@@ -3,7 +3,131 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="reset.css" />
+    <title>Produkt Liste</title>
   </head>
-  <body></body>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="Gå til forsiden"
+          >EK ARC.</a
+        >
+        <nav class="site-nav">
+          <a href="index.html">Kategorier</a>
+          <a href="productlist.html">Produkter</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      <header class="page-header">
+        <p class="breadcrumbs">
+          <a href="index.html">Forside</a>
+          <span aria-hidden="true">/</span> Accessories
+        </p>
+        <h1>Accessories</h1>
+      </header>
+      <section aria-label="Produktliste">
+        <div class="grid product-grid">
+          <!--  Normal -->
+          <article>
+            <a class="product-card card" href="product.html">
+              <div class="product-media">
+                <img
+                  src="https://kea-alt-del.dk/t7/images/webp/640/1532.webp"
+                  alt="Produktbillede"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="product-body">
+                <h2 class="product-title">Puma Training Shirt</h2>
+                <p class="product-brand">Puma</p>
+                <p class="product-price">249 DKK</p>
+              </div>
+            </a>
+          </article>
+
+          <!-- Tilbud -->
+          <article>
+            <a class="product-card card discount" href="product.html">
+              <div class="product-media">
+                <span class="badge">Tilbud</span>
+                <img
+                  src="https://kea-alt-del.dk/t7/images/webp/640/1525.webp"
+                  alt="Produktbillede"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="product-body">
+                <h2 class="product-title">Puma Fitness Backpack</h2>
+                <p class="product-brand">Puma</p>
+                <p class="product-price">
+                  <span class="price-now">199 DKK</span>
+                  <span class="price-was" aria-label="Førpris">299 DKK</span>
+                  <span class="discount-percent" aria-label="Rabat">-33%</span>
+                </p>
+              </div>
+            </a>
+          </article>
+          <!-- Udsolgt -->
+          <article>
+            <a
+              class="product-card card soldout"
+              href="product.html"
+              aria-label="Produkt (Udsolgt)"
+            >
+              <div class="product-media">
+                <img
+                  src="https://kea-alt-del.dk/t7/images/webp/640/1164.webp"
+                  alt="Produktbillede"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="product-body">
+                <h2 class="product-title">Blue India Cricket Jersey</h2>
+                <p class="product-brand">Nike</p>
+                <p class="product-price">249 DKK</p>
+              </div>
+            </a>
+          </article>
+
+          <!-- 4) Tilbud + Udsolgt -->
+          <article>
+            <a
+              class="product-card card discount soldout"
+              href="product.html"
+              aria-label="Produkt (Tilbud og Udsolgt)"
+            >
+              <div class="product-media">
+                <span class="badge">Tilbud</span>
+                <img
+                  src="https://kea-alt-del.dk/t7/images/webp/640/1567.webp"
+                  alt="Produktbillede"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="product-body">
+                <h2 class="product-title">Black Gym Shorts</h2>
+                <p class="product-brand">Decathlon</p>
+                <p class="product-price">
+                  <span class="price-now">49 DKK</span>
+                  <span class="price-was" aria-label="Førpris">99 DKK</span>
+                  <span class="discount-percent" aria-label="Rabat">-51%</span>
+                </p>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© EK ARC.</p>
+      </div>
+    </footer>
+  </body>
 </html>
