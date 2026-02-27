@@ -1,6 +1,9 @@
+const category = new URLSearchParams(window.location.search).get("category");
+console.log(category);
 const container = document.querySelector("main");
 
-const endpoint = "https://kea-alt-del.dk/t7/api/products";
+const endpoint = `https://kea-alt-del.dk/t7/api/products?category=${category}`;
+document.querySelector("h1").textContent = category;
 
 function getData() {
   fetch(endpoint)

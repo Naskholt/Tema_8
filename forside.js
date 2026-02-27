@@ -4,13 +4,14 @@ const container = document.querySelector("#linkcontainer");
 
 function getData() {
   fetch(endpoint)
-    .then((fisk) => fisk.json())
+    .then((response) => response.json())
     .then(showData);
 }
 function showData(data) {
+  let markup = "";
   console.log(data);
-  data.forEach((fisk) => {
-    container.innerHTML += `<a href="productlist.html">${fisk.category}</a> `;
+  data.forEach((element) => {
+    container.innerHTML += `<a href="productlist.html?category=${element.category}">${element.category}</a> `;
   });
 }
 
