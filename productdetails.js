@@ -1,6 +1,9 @@
 const productId = new URLSearchParams(window.location.search).get("id");
 console.log(productId);
 const productContainer = document.querySelector(".product-detail");
+const breadcrumbCategoryLink = document.querySelector(
+  '.breadcrumbs a[href="productlist.html"]',
+);
 const endpoint = `https://kea-alt-del.dk/t7/api/products/${productId}`;
 
 function getData() {
@@ -10,9 +13,14 @@ function getData() {
 }
 
 function showData(data) {
+  if (breadcrumbCategoryLink) {
+    breadcrumbCategoryLink.href = `productlist.html?category=${data.category}`;
+    breadcrumbCategoryLink.textContent = data.category;
+  }
+
   productContainer.innerHTML = `
   <div> 
-  <a href="productlist.html?category=${data.category}">Tilbage til produkter</a>
+  <a href="productlist.html?category=${data.category}"><-Tilbage</a>
   <figure>
     <img src="https://kea-alt-del.dk/t7/images/webp/640/${data.id}.webp" alt="product image" class="productImage" />
     ${data.discount ? `<span class="saleLabel">Udsalg!</span>` : ""}
