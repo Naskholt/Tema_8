@@ -4,6 +4,7 @@ const container = document.querySelector("main");
 
 const endpoint = `https://kea-alt-del.dk/t7/api/products?category=${category}`;
 document.querySelector("h1").textContent = category;
+document.querySelector(".breadcrumbs-category").textContent = category;
 
 function getData() {
   fetch(endpoint)
