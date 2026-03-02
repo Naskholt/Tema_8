@@ -11,8 +11,8 @@
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="reset.css" />
-    <script src="index.js" defer></script>
-    <title>EK ARC.</title>
+    <script src="productdetails.js" defer></script>
+    <title>Produkt Side</title>
   </head>
   <body>
     <header class="site-header">
@@ -21,25 +21,23 @@
           >EK ARC.</a
         >
         <nav class="site-nav">
-          <a href="index.html">Categories</a>
-          <a href="#">Brands</a>
-          <a href="#">Seasons</a>
+          <a href="index.html">Kategorier</a>
+          <a href="productlist.html">Produkter</a>
         </nav>
       </div>
     </header>
     <main class="container">
-      <section class="hero">
-        <p class="hero-kicker">New Collection</p>
-        <h1>Kategorier</h1>
-        <p class="hero-lead">
-          Enkle essentials til hverdagen — vælg en kategori og udforsk udvalget.
+      <header class="page-header">
+        <p class="breadcrumbs">
+          <a href="index.html">Forside</a> <span aria-hidden="true">/</span>
+          <a href="productlist.html">Accessories</a>
+          <span aria-hidden="true">/</span> Produkt
         </p>
-      </section>
-      <section>
-        <h2 class="section-title">Shop efter kategori</h2>
-        <div id="linkcontainer" class="grid categories"></div>
-      </section>
+      </header>
+
+      <section class="product-detail card"></section>
     </main>
+
     <footer class="site-footer">
       <div class="container footer-inner">
         <p>© EK ARC.</p>
