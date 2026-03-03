@@ -7,12 +7,13 @@ function getData() {
     .then((response) => response.json())
     .then(showData);
 }
-function showData(data) {
+function showData(categories) {
   let markup = "";
-  console.log(data);
-  data.forEach((element) => {
-    container.innerHTML += `<a href="productlist.html?category=${element.category}">${element.category}</a> `;
+  console.log(categories);
+  categories.forEach((element) => {
+    markup += `<a href="productlist.html?category=${element.category}">${element.category}</a> `;
   });
+  container.innerHTML = markup;
 }
 
 getData();
