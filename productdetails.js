@@ -1,6 +1,8 @@
 const productId = new URLSearchParams(window.location.search).get("id");
 console.log(productId);
 const productContainer = document.querySelector(".product-detail");
+
+// Find breadcrumb link element
 const breadcrumbCategoryLink = document.querySelector(
   '.breadcrumbs a[href="productlist.html"]',
 );
@@ -13,6 +15,7 @@ function getData() {
 }
 
 function showData(data) {
+  // Update breadcrumb link
   if (breadcrumbCategoryLink) {
     breadcrumbCategoryLink.href = `productlist.html?category=${data.category}`;
     breadcrumbCategoryLink.textContent = data.category;

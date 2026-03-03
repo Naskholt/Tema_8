@@ -69,6 +69,10 @@ a {
   border-radius: 12px;
 }
 
+.site-nav a:hover {
+  color: #e9e9e9;
+}
+
 .section-title {
   margin: 22px 0 12px;
   color: #333;
@@ -77,11 +81,27 @@ a {
 }
 
 .breadcrumbs {
-  margin: 0 0 8px;
+  margin: 20px 0 20px;
   font-size: 0.95rem;
   opacity: 0.85;
 }
 
+.productlist-filters {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 24px;
+  color: #333;
+}
+.productlist-filters button {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgb(205, 205, 205);
+  border: none;
+}
+
+.productlist-filters button:hover {
+  background: #e9e9e9;
+}
 /* ===== Cards / Grid ===== */
 .card {
   border: var(--border);
@@ -194,8 +214,8 @@ a {
   display: inline-block;
   padding: 2px 8px;
   border-radius: 10px;
-  background: rgb(198, 24, 24);
-  color: #ececec;
+  background: #ececec;
+  color: rgb(198, 24, 24);
 }
 
 .productlist-grid .smallProduct.soldOut img {
@@ -258,8 +278,8 @@ a {
   padding: 6px 10px;
   border-radius: 10px;
   border: var(--border);
-  background: rgb(198, 24, 24);
-  color: #ececec;
+  background: #ececec;
+  color: rgb(198, 24, 24);
   font-weight: 800;
   font-size: 0.85rem;
 }
