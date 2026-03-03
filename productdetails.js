@@ -23,7 +23,7 @@ function showData(data) {
   <a href="productlist.html?category=${data.category}"><-Tilbage</a>
   <figure>
     <img src="https://kea-alt-del.dk/t7/images/webp/640/${data.id}.webp" alt="product image" class="productImage" />
-    ${data.discount ? `<span class="saleLabel">Udsalg!</span>` : ""}
+    ${data.discount ? `<span class="saleLabel">tilbud</span>` : ""}
   </figure>
   </div>
           <section class="product-detail__info">
