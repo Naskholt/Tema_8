@@ -265,6 +265,10 @@ a {
   align-items: start;
 }
 
+.product-brand {
+  margin-top: 20px;
+}
+
 .product-detail__info {
   display: grid;
   gap: 10px;
