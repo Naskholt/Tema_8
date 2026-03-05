@@ -28,17 +28,26 @@
       </div>
     </header>
     <section class="container">
-      <header class="page-header">
+      <header>
         <p class="breadcrumbs">
           <a href="index.html">Forside</a> <span aria-hidden="true">/</span>
           <span class="breadcrumbs-category" aria-hidden="true">/</span>
         </p>
 
-        <div class="productlist-filters">
-          <button>All</button>
-          <button>Unisex</button>
-          <button>Women</button>
-          <button>Men</button>
+        <div class="productlist-controls">
+          <div class="productlist-filters">
+            <button>All</button>
+            <button>Unisex</button>
+            <button>Women</button>
+            <button>Men</button>
+          </div>
+
+          <div id="sorter">
+            <button data-text="az">A-Z</button>
+            <button data-text="za">Z-A</button>
+            <button data-price="up">Lav-høj</button>
+            <button data-price="down">Høj-lav</button>
+          </div>
         </div>
 
         <h1>Accessories</h1>

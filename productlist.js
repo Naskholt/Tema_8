@@ -7,19 +7,25 @@ document.querySelector("h1").textContent = category;
 document.querySelector(".breadcrumbs-category").textContent = category;
 
 document
-  .querySelectorAll("button")
+  .querySelectorAll(".productlist-filters button")
   .forEach((button) => button.addEventListener("click", filter));
 
-let allData;
+document
+  .querySelectorAll("#sorter button")
+  .forEach((button) => button.addEventListener("click", sorter));
+
+let allData; // variabel til at gemme alle produkter
+let udsnit; // variabel til at gemme det filtrerede udsnit af produkter
 
 function getData() {
   fetch(endpoint)
     .then((res) => res.json())
     .then((data) => {
-      allData = data; // gem alle produkter
+      allData = udsnit = data; // gem alle produkter
       showProducts(allData); // vis alle produkter
     });
 }
+// Funktion til at filtrere produkter baseret på køn
 function filter(e) {
   const valgt = e.target.textContent;
   if (valgt == "All") {
@@ -31,6 +37,32 @@ function filter(e) {
     showProducts(udsnit); // vis filtrerede produkter
   }
 }
+
+function sorter(e) {
+  if (e.target.dataset.price) {
+    // tjek om der skal sorteres på pris
+    const dir = e.target.dataset.price; // "up" or "down"
+    if (dir == "up") {
+      udsnit.sort((a, b) => a.price - b.price); // low -> high
+    } else {
+      udsnit.sort((a, b) => b.price - a.price); // high -> low
+    }
+  } else {
+    // ellers sorter alfabetisk
+    const dir = e.target.dataset.text; // læs retning "az" eller "za"
+    if (dir == "az") {
+      udsnit.sort((a, b) =>
+        a.productdisplayname.localeCompare(b.productdisplayname, "da"),
+      );
+    } else {
+      udsnit.sort((a, b) =>
+        b.productdisplayname.localeCompare(a.productdisplayname, "da"),
+      );
+    }
+  }
+  showProducts(udsnit);
+}
+
 function showProducts(products) {
   let markup = "";
   products.forEach((product) => {

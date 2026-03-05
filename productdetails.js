@@ -24,9 +24,8 @@ function showData(data) {
   productContainer.innerHTML = `
   <div> 
   <a href="productlist.html?category=${data.category}"><-Tilbage</a>
-  <figure>
+  <figure class="${data.soldout ? "soldOut" : ""}">
     <img src="https://kea-alt-del.dk/t7/images/webp/640/${data.id}.webp" alt="product image" class="productImage" />
-    ${data.discount ? `<span class="saleLabel">tilbud</span>` : ""}
   </figure>
   </div>
           <section class="product-detail__info">
@@ -34,7 +33,12 @@ function showData(data) {
           <div>
           <p class="article-type"><span class="bold">Type:</span> ${data.articletype}</p>
           <p class="product-category"><span class="bold">Kategori:</span> ${data.category}</p>
-          <p class="product-price"><span class="bold">Pris:</span> ${data.price},-</p>
+          ${
+            data.discount
+              ? `<p class="product-price"><span class="before">Pris: <s>${data.price},-</s></span></p>
+          <p class="product-price"><span class="after">Nu: ${Math.round(data.price * (1 - data.discount / 100))},-</span></p>`
+              : `<p class="product-price"><span class="bold">Pris:</span> ${data.price},-</p>`
+          }
 </div>
 
 <button class="buyButton">Køb nu</button>
